@@ -84,16 +84,17 @@
 <script>
 
     var list = $('.output ul');
+
     var arr = [];
     var obj = {};
 
 
-    $("form").on("submit", function (event) {
+    $("form").on("submit", function () {
 
         var userName = $('[name=name]').val();
         var lasTname = $('[name=last-name]').val();
 
-        console.log(arr.length);
+
 
         if (userName !== "" && lasTname !== "") {
 
@@ -108,48 +109,70 @@
                 var objArr = Object.keys(obj);
 
             }
-           /* arr = [];*/
-            list.find('li').remove();
-            for (var v = 0; v < objArr.length; v++) {
 
-                list.append('<li>' + objArr[v] + '</li>');
-                /*arr.push(objArr[v])*/ //азполнить первый массив не повторяющимися строками
+            var li = list.find('li');
+            var readyList = [];
+            li.each(function() {
+                readyList.push($(this).text());
+            });
+
+            /*console.log('то что в списке - ' + readyList);*/
+
+
+
+            diff = function (a1, a2) {
+                return a1.filter(i=>!a2.includes(i))
+                    .concat(a2.filter(i=>!a1.includes(i)))
             }
 
 
 
+            var newN = diff(readyList, objArr);
+
+            /*console.log(newN);*/
 
 
-            console.log(objArr);
+     /* arr = [];*/
+            for (var v = 0; v < newN.length; v++) {
 
+                list.append('<li>' + newN[v] + '</li>');
+                /*arr.push(objArr[v])*/ //заполнить первый массив не повторяющимися строками
+            }
 
-
-
-
-
-            /*if (arr.length == 0) {
-							arr.push(newString);
-							list.append('<li>' + arr[0] + '</li>');
-						}
-						else {
-
-						 for (var i = 0; i < arr.length; i++) {
-											if (arr[i] !== newString) {
-
-												arr.push(newString);
-												console.log(arr);
-												list.append('<li>' + arr[i] + '</li>');
-											}//if
-						 }//for
-						}//else
-								*/
         }//if
 
         return false
 
     });
+    var objArr = [];
+    var arrObjects = {};
+    $('.output').on('click', 'li', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+  var thIndex = $(this).index();
+        $(this).each(function() {
+            str = $(this).text();
+
+
+            objArr.push(
+                arrObjects = {
+                    val: str,
+                    strNum: thIndex,
+								}
+						);
+
+
+        });
+
+        console.log( objArr);
+        console.log( thIndex);
+    });
+
+
 
 </script>
 
 
 </html>
+
+<a href="" target="_blank"></a>
