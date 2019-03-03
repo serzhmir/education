@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>self-education</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<style>
+	body {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+</style>
+<body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<div class="container">
+	<div class="row d-flex justify-content-center">
+		<div class="col-10">
+			<form>
+				<div class="form-group">
+					<div class="row">
+						<div class="col">
+							<label for="name">Ваше имя</label>
+							<input type="text" id="name" name="name" class="form-control" placeholder="Ваше имя">
+						</div>
+						<div class="col">
+							<label for="tel">Ваш телефон</label>
+							<input type="tel" id="tel" name="tel" class="form-control" placeholder="+7">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-6">
+							<label for="exampleInputEmail1">Email</label>
+							<input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp"
+										 placeholder="Enter email">
+						</div>
+						<div class="col-6">
+							<label for="exampleInputPassword1">Пароль</label>
+							<input type="password" class="form-control" name="pass" id="exampleInputPassword1" placeholder="Password">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-6">
+							<legend>Данные из checkbox</legend>
+							<div class="form-check">
+								<input class="form-check-input" name="defaultCheck1" type="checkbox" value="" id="defaultCheck1">
+								<label class="form-check-label"  for="defaultCheck1">
+									Первый checkbox
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input"  name="defaultCheck2" type="checkbox" value="" id="defaultCheck2">
+								<label class="form-check-label" for="defaultCheck2">
+									Второй checkbox
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input"  name="defaultCheck3" type="checkbox" value="" id="defaultCheck3">
+								<label class="form-check-label" for="defaultCheck3">
+									Третий checkbox
+								</label>
+							</div>
+						</div>
+						<div class="col-6">
+							<legend>Данные из radio</legend>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+								>
+								<label class="form-check-label" for="exampleRadios1">
+									Первый radio
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+								<label class="form-check-label" for="exampleRadios2">
+									Второй radio
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3"
+								>
+								<label class="form-check-label" for="exampleRadios3">
+									Третий radio
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-6">
+							<label for="formControlRange">Данные из Range input</label>
+							<input class="form-control"  name="range" type="range" class="form-control-range" id="formControlRange">
+						</div>
+						<div class="col-6">
+							<label for="color">Данные из input-color</label>
+							<input type="color" id="color" name="favcolor" value="#ff0000">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-6">
+							<label for="date">Данные input-date</label>
+							<input  class="form-control" type="date" id="date" name="bday">
+						</div>
+						<div class="col-6">
+							<label for="datetime-local">Данные datetime-local</label>
+							<input  class="form-control" type="datetime-local" id="datetime-local" name="bdaytime"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-6">
+							<label for="month">Данные из input-month</label>
+							<input  class="form-control" type="month" id="month" name="bdaymonth">
+						</div>
+						<div class="col-6">
+							<label for="number">Данные из input-number</label>
+							<input  class="form-control" type="number" id="number" name="quantity" min="1" max="5"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-6">
+							<label for="search">Данные из input-search</label>
+							<input  class="form-control" type="search" id="search" name="googlesearch">
+						</div>
+						<div class="col-6">
+							<label for="search">Данные из input-time</label>
+							<input  class="form-control" type="time" id="time" name="usr_time"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-6">
+							<label for="search">Данные из input-url</label>
+							<input  class="form-control" type="url" id="url" name="homepage">
+						</div>
+						<div class="col-6">
+							<label for="search">Данные из input-week</label>
+							<input  class="form-control" type="week" id="week" name="year_week">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-6">
+							<label for="exampleFormControlSelect1">Данные из селекта</label>
+							<select class="form-control" name="select" id="exampleFormControlSelect1">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="col-6">
+							<label for="exampleFormControlTextarea1">Данные из textarea</label>
+							<textarea class="form-control" id="exampleFormControlTextarea1" name="textarea" rows="3"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<input value="hidden-input-value" type="hidden">
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary mb-2">Отправить</button>
+				</div>
+			</form>
+		</div>
+		<!-- /.col-10 -->
+	</div>
+	<!-- /.row -->
+</div>
+<!-- /.container -->
+</body>
+
+<script>
+
+    $(function(){
+        function getFormFromLocalStorage() {
+
+            var query = decodeURIComponent(localStorage.getItem('userData'));//получаем данные формы в виде строки и декодируем
+
+            var data = query.split("&");//разделяем и превращаем в массив
+
+            for (var i = 0; i < data.length; i++) {
+                var item = data[i].split("=");
+                if (item[1] == "") {
+                    $('[name=' + item[0] + '][type=checkbox]').prop("checked", true);
+                }
+                else if ($('[name=' + item[0] + ']').attr('type') == 'radio') {
+                    $('[value=' + item[1] + ']').prop("checked", true);
+
+                }
+
+                else {
+                    $('[name=' + item[0] + ']').val(item[1]);//задаём значения в соответствии с атрибутом [name]
+                }
+            }
+            console.log(query);
+            console.log(data);
+        }
+
+        if (localStorage.getItem('userData') !== null) {
+            getFormFromLocalStorage();
+        }
+        else {
+            console.log('empty localStorage')
+        }
+    });
+
+    $( "form" ).on( "submit", function( event ) {
+
+
+        var dateForm = $( this ).serialize();
+
+        localStorage.setItem('userData', dateForm);
+    });
+
+</script>
+
+</html>
