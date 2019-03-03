@@ -29,6 +29,18 @@
 		border-radius: 10px;
 	}
 
+	.output {
+		margin-top: 16px;
+		background: #fff;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		border-radius: 6px
+	}
+
+	h3 {
+		color: #000;
+	}
+
 </style>
 <body>
 <!-- Pen content -->
@@ -56,11 +68,12 @@
 		</div>
 		<!-- /.col-10 -->
 		<div class="col-10">
-			<ul class="output">
-				<li class="output__item"></li>
-				<!-- /.output__item -->
-			</ul>
-			<!-- /.output -->
+			<div class="output">
+				<h3 class="text-center">Список</h3>
+				<ul >
+
+				</ul>
+				<!-- /.output --></div>
 		</div>
 	</div>
 </div>
@@ -69,48 +82,74 @@
 </body>
 
 <script>
-/*
-    $(function () {
-        function getFormFromLocalStorage() {
 
-            var query = decodeURIComponent(localStorage.getItem('userData'));
+    var list = $('.output ul');
+    var arr = [];
+    var obj = {};
 
-            var data = query.split("&");
-
-            for (var i = 0; i < data.length; i++) {
-                var item = data[i].split("=");
-                if (item[1] == "") {
-                    $('[name=' + item[0] + '][type=checkbox]').prop("checked", true);
-                } else if ($('[name=' + item[0] + ']').attr('type') == 'radio') {
-                    $('[value=' + item[1] + ']').prop("checked", true);
-
-                } else {
-                    $('[name=' + item[0] + ']').val(item[1]);
-                }
-            }
-        }
-
-        if (localStorage.getItem('userData') !== null) {
-            getFormFromLocalStorage();
-        }
-    });
-*/
 
     $("form").on("submit", function (event) {
 
-
-        var name = $('[name=name]').val();
+        var userName = $('[name=name]').val();
         var lasTname = $('[name=last-name]').val();
 
+        console.log(arr.length);
+
+        if (userName !== "" && lasTname !== "") {
+
+            var newString = userName + ' ' + lasTname;
+
+
+            arr.push(newString);
+
+            for (var i = 0; i < arr.length; i++) {
+                var str = arr[i];
+                obj[str] = true;
+                var objArr = Object.keys(obj);
+
+            }
+           /* arr = [];*/
+            list.find('li').remove();
+            for (var v = 0; v < objArr.length; v++) {
+
+                list.append('<li>' + objArr[v] + '</li>');
+                /*arr.push(objArr[v])*/ //азполнить первый массив не повторяющимися строками
+            }
 
 
 
 
-        $('.output__item').text(name + lasTname);
+
+            console.log(objArr);
+
+
+
+
+
+
+            /*if (arr.length == 0) {
+							arr.push(newString);
+							list.append('<li>' + arr[0] + '</li>');
+						}
+						else {
+
+						 for (var i = 0; i < arr.length; i++) {
+											if (arr[i] !== newString) {
+
+												arr.push(newString);
+												console.log(arr);
+												list.append('<li>' + arr[i] + '</li>');
+											}//if
+						 }//for
+						}//else
+								*/
+        }//if
 
         return false
 
     });
+
 </script>
+
 
 </html>
