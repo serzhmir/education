@@ -95,7 +95,6 @@
         var lasTname = $('[name=last-name]').val();
 
 
-
         if (userName !== "" && lasTname !== "") {
 
             var newString = userName + ' ' + lasTname;
@@ -116,9 +115,6 @@
                 readyList.push($(this).text());
             });
 
-            /*console.log('то что в списке - ' + readyList);*/
-
-
 
             diff = function (a1, a2) {
                 return a1.filter(i=>!a2.includes(i))
@@ -126,20 +122,19 @@
             }
 
 
-
             var newN = diff(readyList, objArr);
 
-            /*console.log(newN);*/
 
+                var dataNumer = li.length;
 
-     /* arr = [];*/
             for (var v = 0; v < newN.length; v++) {
 
-                list.append('<li>' + newN[v] + '</li>');
-                /*arr.push(objArr[v])*/ //заполнить первый массив не повторяющимися строками
+                list.append('<li data-number=' + dataNumer + '>' + newN[v] + '</li>');
+
             }
 
-        }//if
+
+        }
 
         return false
 
@@ -149,25 +144,31 @@
     $('.output').on('click', 'li', function(event) {
         event.preventDefault();
         /* Act on the event */
-  var thIndex = $(this).index();
+  var thIndex = $(this).attr('data-number');
+
+        var indexEl = $(this).index();
+
         $(this).each(function() {
             str = $(this).text();
+            if ($(this).attr('data-in-array') == 'true') {
+                objArr[indexEl].strNum++;
+            }
+            else {
 
-
-            objArr.push(
-                arrObjects = {
-                    val: str,
-                    strNum: thIndex,
-								}
-						);
-
+                $(this).attr('data-in-array', 'true');
+                objArr.push(
+                    arrObjects = {
+                        val: str,
+                        strNum: thIndex,
+                    }
+                );
+            }
 
         });
 
         console.log( objArr);
-        console.log( thIndex);
-    });
 
+    });
 
 
 </script>
