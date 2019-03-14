@@ -1,95 +1,96 @@
 <!doctype html>
 <html lang="ru">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Self-education</title>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-					integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-					crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-				integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Self-education</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <style>
-
-	body {
-		padding-top: 100px;
-		padding-bottom: 100px;
-		background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/smoke_texture2714-min.jpg);
-		background-repeat: no-repeat;
-		background-size: cover;
-		height: 100%;
-	}
-
-	form {
-		background: #fff;
-		padding: 30px;
-		box-shadow: 0px -1px 20px 1px rgba(0, 0, 0, 0.47058823529411764);
-		border-radius: 10px;
-	}
-
-	.output {
-		margin-top: 16px;
-		background: #fff;
-		padding-top: 20px;
-		padding-bottom: 20px;
-		border-radius: 6px
-	}
-
-	h3 {
-		color: #000;
-	}
-
+    body {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/smoke_texture2714-min.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+    }
+    
+    form {
+        background: #fff;
+        padding: 30px;
+        box-shadow: 0px -1px 20px 1px rgba(0, 0, 0, 0.47058823529411764);
+        border-radius: 10px;
+    }
+    
+    .output {
+        margin-top: 16px;
+        background: #fff;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-radius: 6px
+    }
+    
+    h3 {
+        color: #000;
+    }
 </style>
+
 <body>
-<!-- Pen content -->
-<div class="container">
-	<div class="row d-flex justify-content-center">
-		<div class="col-lg-10">
-			<form action="#" method="post">
-				<div class="form-group">
-					<div class="row">
-						<div class="col-lg-6">
-							<label for="name">Ваше имя</label>
-							<input type="text" id="name" name="name" class="form-control" placeholder="Ваше имя">
-						</div>
-						<div class="col-lg-6">
-							<label for="last-name">Ваша фамилия</label>
-							<input type="text" id="last-name" name="last-name" class="form-control" placeholder="Ваша фамилия">
-						</div>
-					</div>
-				</div>
+    <!-- Pen content -->
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-10">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="name">Ваше имя</label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Ваше имя">
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="last-name">Ваша фамилия</label>
+                                <input type="text" id="last-name" name="last-name" class="form-control" placeholder="Ваша фамилия">
+                            </div>
+                        </div>
+                    </div>
 
-				<div class="form-group">
-					<button type="submit" class="btn btn-primary mb-2">Отправить</button>
-				</div>
-			</form>
-		</div>
-		<!-- /.col-10 -->
-		<div class="col-10">
-			<div class="output">
-				<h3 class="text-center">Список</h3>
-				<ul >
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary mb-2">Отправить</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.col-10 -->
+            <div class="col-10">
+                <div class="output">
+                    <h3 class="text-center">Список</h3>
+                    <ul>
 
-				</ul>
-				<!-- /.output --></div>
-		</div>
-	</div>
-</div>
-<!-- /.container -->
+                    </ul>
+                    <!-- /.output -->
+                </div>
+            </div>
+            <!-- <h3 class="text-center">Массив объектов</h3> -->
+            <!--  <pre>
+
+	</pre> -->
+        </div>
+    </div>
+    <!-- /.container -->
 
 </body>
 
 <script>
-
     var list = $('.output ul');
 
     var arr = [];
     var obj = {};
 
 
-    $("form").on("submit", function () {
+    $("form").on("submit", function() {
 
         var userName = $('[name=name]').val();
         var lasTname = $('[name=last-name]').val();
@@ -116,16 +117,16 @@
             });
 
 
-            diff = function (a1, a2) {
-                return a1.filter(i=>!a2.includes(i))
-                    .concat(a2.filter(i=>!a1.includes(i)))
+            diff = function(a1, a2) {
+                return a1.filter(i => !a2.includes(i))
+                    .concat(a2.filter(i => !a1.includes(i)))
             }
 
 
             var newN = diff(readyList, objArr);
 
 
-                var dataNumer = li.length;
+            var dataNumer = li.length;
 
             for (var v = 0; v < newN.length; v++) {
 
@@ -144,7 +145,7 @@
     $('.output').on('click', 'li', function(event) {
         event.preventDefault();
         /* Act on the event */
-  var thIndex = $(this).attr('data-number');
+        var thIndex = $(this).attr('data-number');
 
         var indexEl = $(this).index();
 
@@ -152,8 +153,7 @@
             str = $(this).text();
             if ($(this).attr('data-in-array') == 'true') {
                 objArr[indexEl].strNum++;
-            }
-            else {
+            } else {
 
                 $(this).attr('data-in-array', 'true');
                 objArr.push(
@@ -166,11 +166,9 @@
 
         });
 
-        console.log( objArr);
+        console.log(objArr);
 
     });
-
-
 </script>
 
 
